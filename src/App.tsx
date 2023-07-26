@@ -1,23 +1,8 @@
-import { useEffect } from 'react';
-import { BrowserRouter, Routes } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
 
-function App() {
-  useEffect(() => {
-    // auth.setAxiosToken();
-  }, []);
-
+export default function App() {
   return (
-    <>
+    <HelmetProvider>
       <Sidebar />
-      <BrowserRouter>
-        <Routes>
-          {/* <Route element={#} path="/"></Route>
-          <Route element={#} path="/film"></Route> */}
-        </Routes>
-      </BrowserRouter>
-    </>
+    </HelmetProvider>
   );
 }
-
-export default App;
