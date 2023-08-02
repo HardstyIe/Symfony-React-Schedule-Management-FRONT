@@ -3,12 +3,14 @@ import Dashboard from "./Pages/Dashboard";
 import Cours from './Pages/Cours';
 import Absences from './Pages/Absences';
 import Inscription from './Pages/Inscription';
+import Connexion from './Pages/Connexion';
 
 export default function App() {
   return (
     <>
       <BrowserRouter>
             <Routes>
+            <Route element={<Connexion />} path="/" />
             <Route element={<Inscription />} path="/inscription" />
             <Route element={<Cours />} path="/cours" />
               <Route element={<Dashboard />} path="/dashboard" />
