@@ -8,7 +8,7 @@ const Sidebar = () => {
   const Menus = [
     { title: 'Dashboard', link: '/dashboard', src: 'Chart_fill', gap: true },
     { title: 'Cours', link: '/cours', src: 'Cours' },
-    // { title: 'Comptes', link: '/comptes', src: 'User', gap: true },
+    { title: 'Absences', link: '/absences', src: 'bloc-notes' },
     // { title: 'Calendrier', link: '/calendrier', src: 'Calendar' },
     // { title: 'Recherche', link: '/recherche', src: 'Search' },
     // { title: 'Analytiques', link: '/analytiques', src: 'Chart' },
@@ -25,7 +25,7 @@ const Sidebar = () => {
          border-2 rounded-full  ${!open && 'rotate-180'}`}
         onClick={() => setOpen(!open)}
       />
-      <Link to={"/"}>
+      <Link to={"/cours"}>
         <div className="flex items-center gap-x-4">
           <img
             src="./src/assets/navimg/logo.png"

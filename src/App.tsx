@@ -1,32 +1,21 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Sidebar from './Components/Sidebar';
 import Dashboard from "./Pages/Dashboard";
 import Cours from './Pages/Cours';
+import Absences from './Pages/Absences';
+import Inscription from './Pages/Inscription';
 
 export default function App() {
   return (
     <>
       <BrowserRouter>
-        {/* Div pour que le contenu de la page soit dans le flex */}
-        <div className="flex">
-        <Sidebar />
-        <div className="flex-1 h-screen p-7">
-        <Routes>
-          <Route element={<Cours />} path={"/"} />
-          <Route element={<Dashboard />} path={"/dashboard"} />
-          <Route element={<Cours />} path={"/cours"} />
-          {/* Ajoutez d'autres routes ici si nécessaire */}
-        </Routes>
-        </div>
-      </div>
+            <Routes>
+            <Route element={<Inscription />} path="/inscription" />
+            <Route element={<Cours />} path="/cours" />
+              <Route element={<Dashboard />} path="/dashboard" />
+              <Route element={<Absences />} path="/absences" />
+              {/* Ajoutez d'autres routes ici si nécessaire */}
+            </Routes>
       </BrowserRouter>
     </>
   );
 }
-
-
-
-
-
-
-
