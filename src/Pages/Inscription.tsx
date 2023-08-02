@@ -1,12 +1,12 @@
 import React from 'react';
-import InscriptionCard from '../Components/InscriptionCard'
+import InscriptionForm from '../Components/InscriptionForm'
 
 const Inscription = () => {
-    return (
-        <div>
-            <h1>Hello</h1>
-            <InscriptionCard />
-        </div>
+    return (<>
+        <div className="flex items-center justify-center h-screen m-3">
+            <InscriptionForm />
+            </div>
+            </>
     );
 };
 
