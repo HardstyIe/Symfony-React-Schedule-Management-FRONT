@@ -6,6 +6,7 @@ import {
     Button,
 } from "@material-tailwind/react";
 import ModalAbsence from './ModalAbsence';
+import ModalAssignation from './ModalAssignation';
 
 const ListUser = () => {
     return (<>
@@ -37,17 +38,17 @@ const ListUser = () => {
                     <List>
                         <ListItem ripple={false} className="py-1 pr-1 pl-4 pt-2 pb-2 flex justify-between items-center">
                             nom du Formateur 1
-                            <Button className='bg-green-700'>Assigner</Button>
+                            <ModalAssignation />
                         </ListItem>
                         <hr />
                         <ListItem ripple={false} className="py-1 pr-1 pl-4 pt-2 pb-2 flex justify-between items-center">
                             nom du Formateur 2
-                            <Button className='bg-green-700'>Assigner</Button>
+                            <ModalAssignation />
                         </ListItem>
                         <hr />
                         <ListItem ripple={false} className="py-1 pr-1 pl-4 pt-2 pb-2 flex justify-between items-center">
                             nom du Formateur 3
-                            <Button className='bg-green-700'>Assigner</Button>
+                            <ModalAssignation />
                         </ListItem>
                     </List>
                 </Card>

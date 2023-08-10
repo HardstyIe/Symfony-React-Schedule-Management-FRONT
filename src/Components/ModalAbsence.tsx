@@ -79,7 +79,7 @@ const ModalAbsence = () => {
                             {/* Justification admise ou non */}
 
                             <Checkbox
-                                label="Absence/retard justifié ?"
+                                label="Est-ce justifié ?"
                                 value=""
                             />
 
