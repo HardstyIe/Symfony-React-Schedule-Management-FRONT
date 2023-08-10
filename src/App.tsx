@@ -4,19 +4,23 @@ import Cours from './Pages/Cours';
 import Absences from './Pages/Absences';
 import Inscription from './Pages/Inscription';
 import Connexion from './Pages/Connexion';
+import Planning from './Pages/Planning';
+import RessourceCours from './Pages/RessourceCours';
 
 export default function App() {
   return (
     <>
       <BrowserRouter>
-            <Routes>
-            <Route element={<Connexion />} path="/" />
-            <Route element={<Inscription />} path="/inscription" />
-            <Route element={<Cours />} path="/cours" />
-              <Route element={<Dashboard />} path="/dashboard" />
-              <Route element={<Absences />} path="/absences" />
-              {/* Ajoutez d'autres routes ici si nécessaire */}
-            </Routes>
+        <Routes>
+          <Route element={<Connexion />} path="/" />
+          <Route element={<Inscription />} path="/inscription" />
+          <Route element={<RessourceCours />} path='/cours/:id' />
+          <Route element={<Cours />} path="/cours" />
+          <Route element={<Dashboard />} path="/dashboard" />
+          <Route element={<Absences />} path="/absences" />
+          <Route element={<Planning />} path='/planning' />
+          {/* Ajoutez d'autres routes ici si nécessaire */}
+        </Routes>
       </BrowserRouter>
     </>
   );
