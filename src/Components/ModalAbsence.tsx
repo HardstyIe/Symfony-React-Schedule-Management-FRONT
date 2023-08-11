@@ -18,7 +18,7 @@ const ModalAbsence = () => {
 
         {showModal && (
             <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-50 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out">
-                <div className="bg-white rounded-lg p-8 min-w-[50%] transition-transform duration-300 ease-in-out">
+                <div className="bg-white rounded-lg p-8 min-w-[50%] max-h-[90%] overflow-y-auto transition-transform duration-300 ease-in-out">
                     <div className="flex items-center justify-between mb-4">
                         <h3 className="text-lg font-semibold">Signaler une absence/retard</h3>
                         <button
@@ -42,6 +42,21 @@ const ModalAbsence = () => {
                     </div>
                     <div className="mb-4">
                         <form action="POST">
+
+                            {/* Nom de l'étudiant si il s'agit d'un formateur qui signale un étudiant */}
+                            {/* Nom de l'étudiant */}
+
+                            <label htmlFor="student">Entrez le nom de l'étudiant</label>
+                            <br />
+                            <Input
+                                type="text"
+                                id="student"
+                                name="student"
+                                className="border border-gray-300 px-2 py-1 rounded"
+                                placeholder="Entrez le nom de l'étudiant"
+                            />
+
+                            <br />
 
                             {/* Date de début du cours */}
                             <label htmlFor="dateDebut">Entrez la date de début</label>
@@ -79,6 +94,7 @@ const ModalAbsence = () => {
                             {/* Justification admise ou non */}
 
                             <Checkbox
+                                name='justified'
                                 label="Est-ce justifié ?"
                                 value=""
                             />
@@ -88,7 +104,10 @@ const ModalAbsence = () => {
 
                             <label htmlFor="motif">Motif de l'absence ou du retard:</label>
 
-                            <Textarea label="Motif" />
+                            <Textarea
+                                label="Motif"
+                                name='motif'
+                            />
 
 
 
