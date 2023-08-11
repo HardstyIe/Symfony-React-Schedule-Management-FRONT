@@ -43,6 +43,15 @@ yarn dev
 
 When you use TypeScript with React, you can write JSX with TypeScript, called TSX. Then you can develop views written by **Type-Safe** template.
 
+## Calendar
+
+[Calendar](https://fullcalendar.io) Calendar is a library allowing you to integrate a calendar into your application
+
+```shell
+yarn add @fullcalendar/react
+yarn add @fullcalendar/daygrid
+```
+
 ## Tailwind CSS
 
 [Tailwind CSS](https://tailwindcss.com) is modern utility-first CSS framework. It provides many CSS rules, but these are purged when production builds. So developers do not worry about CSS asset size for performance optimization.
