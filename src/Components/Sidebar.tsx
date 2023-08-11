@@ -8,15 +8,16 @@ const Sidebar = () => {
 
 
   const Menus = [
+
+    // Classe a afficher si administrateur
+    { title: 'Classe', link: '/classe', src: 'Folder', gap: true },
+
     { title: 'Cours', link: '/cours', src: 'Cours', gap: true },
     { title: 'Absences', link: '/absences', src: 'bloc-notes', gap: true },
     { title: 'Tableau de bord', link: '/dashboard', src: 'Chart_fill', gap: true },
-    { title: 'Planning', link: '/planning', src: 'Calendar', gap: true },
-    // { title: 'Calendrier', link: '/calendrier', src: 'Calendar' },
-    // { title: 'Recherche', link: '/recherche', src: 'Search' },
-    // { title: 'Analytiques', link: '/analytiques', src: 'Chart' },
-    // { title: 'Fichiers', link: '/fichiers', src: 'Folder', gap: true },
-    // { title: 'Paramètres', link: '/parametres', src: 'Setting' },
+
+    // Mettre l'id de la classe après /planning pour récupérer le planning de la classe actuel 
+    { title: 'Planning', link: '/planning/2', src: 'Calendar', gap: true },
   ];
 
 
@@ -36,7 +37,7 @@ const Sidebar = () => {
             src={`${window.location.origin}/src/assets/navimg/logo.png`}
             className={`cursor-pointer duration-500 ${open && 'rotate-[360deg]'}`}
           />
-          <h1 className={`text-white origin-left font-medium text-xl duration-200 ${!open && 'scale-0'}`}>Designer</h1>
+          <h1 className={`text-white origin-left font-medium text-xl duration-200 ${!open && 'scale-0'}`}>Sofip</h1>
         </div>
       </Link>
       <ul className="pt-6">

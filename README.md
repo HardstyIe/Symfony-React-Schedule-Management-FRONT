@@ -45,7 +45,7 @@ When you use TypeScript with React, you can write JSX with TypeScript, called TS
 
 ## Calendar
 
-[Calendar](https://fullcalendar.io) Calendar is a library allowing you to integrate a calendar into your application
+[Calendar](https://fullcalendar.io) is a library allowing you to integrate a calendar into your application
 
 ```shell
 yarn add @fullcalendar/react
