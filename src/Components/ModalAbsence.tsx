@@ -14,7 +14,7 @@ const ModalAbsence = () => {
     };
     return (<>
 
-        <Button className='bg-red-700 w-2/4' onClick={handleOpenModal}>Signaler</Button>
+        <Button className='bg-red-700' onClick={handleOpenModal}>Signaler</Button>
 
         {showModal && (
             <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-50 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out">

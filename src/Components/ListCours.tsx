@@ -9,10 +9,10 @@ import { Link } from 'react-router-dom';
 
 const ListCours = () => {
   return (
-    <Card className="w-96">
+    <Card className="w-full md:w-96">
       <List>
-        <ListItem className="flex justify-between">
-          <div>
+        <ListItem className="flex justify-between flex-col sm:flex-row"> {/* Utilisation de flex-col pour une disposition en colonne sur mobile */}
+          <div className="mb-2 sm:mb-0"> {/* Ajout de mb-2 (marge bas) pour l'espacement en dessous sur mobile */}
             <Typography variant="h6" color="blue-gray">
               Nom du cours
             </Typography>

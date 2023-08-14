@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 
 const Sidebar = () => {
-  const [open, setOpen] = React.useState(true);
+  const isMobile = window.innerWidth > 768; // Détermine si l'écran est mobile
+  const [open, setOpen] = React.useState(isMobile); // Initialisez open en fonction de l'écran
 
 
   const Menus = [
@@ -27,7 +28,7 @@ const Sidebar = () => {
       {/* Sidebar content */}
       <img
         src={`${window.location.origin}/src/assets/navimg/control.png`}
-        className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
+        className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple hidden md:block
          border-2 rounded-full  ${!open && 'rotate-180'}`}
         onClick={() => setOpen(!open)}
       />
