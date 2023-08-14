@@ -32,30 +32,21 @@ const CalendarPlanning: React.FC = () => {
                 ref={calendarRef}
                 weekends={false}
 
-
-                // Tout ce qui suit doit etre accessible par un administrateur, il s'agit du bouton modifier pour la gestion du planning du cours
-                eventClick={(info) => {
-
-                    // Gérer le clic sur un événement (par exemple, ouvrir un formulaire de modification)
-                    console.log(info.event); // Accédez à l'événement cliqué
-                }}
                 eventContent={(info) => {
-                    // Personnalisez le contenu de chaque événement de chaque jour du planning
                     return (
-                        <div className="flex justify-between items-center">
-                            {info.event.title}
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation(); // Évite la propagation du clic à l'événement
-
-                                    // Gérer le clic sur le bouton Modifier
-                                    // Le formulaire sera intégré à la place du log avec un modal
-                                    console.log('Modifier', info.event);
-                                }}
-                                className="px-2 py-1 bg-blue-500 text-white rounded-md"
-                            >
-                                Modifier
-                            </button>
+                        <div className="flex flex-col items-center">
+                            <span className="mb-2 text-center">{info.event.title}</span>
+                            <div className="mx-auto">
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        console.log('Modifier', info.event);
+                                    }}
+                                    className="px-2 py-1 bg-blue-500 text-white rounded-md"
+                                >
+                                    Modifier
+                                </button>
+                            </div>
                         </div>
                     );
                 }}

@@ -6,22 +6,22 @@ import Sidebar from '~/Components/Sidebar';
 
 
 const Cours = () => {
-    
+
     return (<>
 
         {/* div contenu coté gauche */}
         <div className="flex">
-        <Sidebar />
+            <Sidebar />
 
-        {/* div contenu coté droit */}
-        <div className="flex-1 h-screen p-7 ml-8">
-            <h1 className='text-lg pt-2'>Bienvenue sur la page cours</h1>
-            <ModalForm />
-            <ListCours />  
+            {/* div contenu coté droit */}
+            <div className="flex-1 h-screen p-7 ml-8">
+                <h1 className='text-lg pt-2 pb-10'>Bienvenue sur la page cours</h1>
+                <ModalForm />
+                <ListCours />
 
+            </div>
         </div>
-        </div>
-        </>
+    </>
     );
 };
 
