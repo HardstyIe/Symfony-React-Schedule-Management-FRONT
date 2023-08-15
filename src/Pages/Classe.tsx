@@ -1,4 +1,6 @@
+import { Button } from '@material-tailwind/react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ListClasse from '~/Components/ListClasse';
 import Sidebar from '~/Components/Sidebar';
 
@@ -12,6 +14,13 @@ const Classe = () => {
             {/* div contenu coté droit */}
             <div className="flex-1 h-screen p-7 ml-8">
                 <h1 className='text-lg pt-2'>Bienvenue sur la page classe</h1>
+                <br />
+                <br />
+                <Link to={'/inscription'}>
+                    <Button className='bg-green-700'>
+                        Inscrire un étudiant
+                    </Button>
+                </Link>
                 <ListClasse />
             </div>
         </div>
