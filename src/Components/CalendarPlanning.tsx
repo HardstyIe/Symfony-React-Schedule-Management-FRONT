@@ -18,10 +18,20 @@ const CalendarPlanning: React.FC = () => {
         if (calendarRef.current) {
             calendar = new Calendar(calendarRef.current, {
                 plugins: [dayGridPlugin, interactionPlugin],
+                // enlève les week-end
                 weekends: false,
+                // Permet de sélectionner plusieur date en meme temps
                 selectable: true,
+                // Met le calendrier en francais
                 locale: 'fr',
+                // Enlève les éléments avant les événements (éléments du type 9a ou 0H00)
                 displayEventTime: false,
+                // Permet de personnaliser le header ( mois bouton today, prev, next)
+                headerToolbar: {
+                    right: 'prev,next today',
+                    center: 'title',
+                    left: '',
+                },
                 events: [
                     { id: 'event1', title: '9H00 - 17H00', start: '2023-08-03T09:00:00', end: '2023-08-03T17:00:00' },
                     { id: 'event2', title: '9H00 - 17H00', start: '2023-08-02T09:00:00', end: '2023-08-02T17:00:00' }
@@ -70,12 +80,29 @@ const CalendarPlanning: React.FC = () => {
             });
 
             calendar.render();
+
+
+            // css pour le header du calendrier
+            const header = calendarRef.current.querySelector('.fc-toolbar') as HTMLElement;
+            if (header) {
+                header.style.display = 'block'
+            }
+
+            const title = calendarRef.current.querySelector('.fc-toolbar-title') as HTMLElement;
+            if (title) {
+                title.style.marginBottom = '3%'
+            }
+
         }
     }, []);
 
+
     return (
-        <div ref={calendarRef}></div>
+        <>
+            <div className='md:h-auto' style={{ minHeight: '1000px' }} ref={calendarRef}></div>
+        </>
     );
+
 };
 
 export default CalendarPlanning;
