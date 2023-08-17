@@ -14,17 +14,24 @@ import ModalAssignation from './ModalAssignation';
 const ListUser = ({ users }) => {
     console.log(users);
 
+    // Filtrer les utilisateurs avec le rôle "ROLE_USER"
+    const filteredUsers = users.filter(user => user.roles.includes('ROLE_USER'));
+
+    // Filtrer les utilisateurs avec le rôle "ROLE_TEACHER"
+    const filteredUsersTeachers = users.filter(user => user.roles.includes('ROLE_TEACHER'));
+
+
     return (<>
         <div className='flex flex-col gap-20 md:flex-row'>
             <div className='mt-10'>
                 <h2 className='mb-5'>Etudiant(s)</h2>
                 <Card className="w-full">
                     <List>
-                        {users.map((user, index) => (
+                        {filteredUsers.map((user, index) => (
                             <ListItem key={index} ripple={false} className="py-1 pr-1 pl-4 pt-2 pb-2 flex justify-between items-center gap-4">
                                 {console.log(user)
                                 }
-                                {user.firstName} {/* Utilisez la propriété appropriée de l'utilisateur */}
+                                {user.firstName} {user.lastName} {/* Utilisez la propriété appropriée de l'utilisateur */}
                                 <ModalAbsence />
                             </ListItem>
                         ))}
@@ -36,20 +43,12 @@ const ListUser = ({ users }) => {
                 <h2 className='mb-5'>Formateur(s)</h2>
                 <Card className="w-full">
                     <List>
-                        <ListItem ripple={false} className="py-1 pr-1 pl-4 pt-2 pb-2 flex justify-between items-center gap-4">
-                            nom du Formateur 1
-                            <ModalAssignation />
-                        </ListItem>
-                        <hr />
-                        <ListItem ripple={false} className="py-1 pr-1 pl-4 pt-2 pb-2 flex justify-between items-center gap-4">
-                            nom du Formateur 2
-                            <ModalAssignation />
-                        </ListItem>
-                        <hr />
-                        <ListItem ripple={false} className="py-1 pr-1 pl-4 pt-2 pb-2 flex justify-between items-center gap-4">
-                            nom du Formateur 3
-                            <ModalAssignation />
-                        </ListItem>
+                        {filteredUsersTeachers.map((user, index) => (
+                            <ListItem ripple={false} className="py-1 pr-1 pl-4 pt-2 pb-2 flex justify-between items-center gap-4">
+                                {user.firstName} {user.lastName}
+                                <ModalAssignation />
+                            </ListItem>
+                        ))}
                     </List>
                 </Card>
 
