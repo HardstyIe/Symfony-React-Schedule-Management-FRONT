@@ -17,11 +17,11 @@ const InscriptionForm: React.FC = () => {
       <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
 
         <div className="mb-4 flex flex-col gap-6">
-          <Input type='text' label="Nom" name='name' style={{ fontSize: "lg" }} required />
-          <Input type='text' label="Prénom" name='lastname' style={{ fontSize: "lg" }} required />
-          <Input type='email' label="Email" name='email' style={{ fontSize: "lg" }} required />
-          <Input type="password" name='password' label="Password" style={{ fontSize: "lg" }} required />
-          <Input type='date' label="Date de naissance" name='birthday' style={{ fontSize: "lg" }} required />
+          <Input type='text' label="Nom" name='name' style={{ fontSize: "lg" }} required crossOrigin={undefined} />
+          <Input type='text' label="Prénom" name='lastname' style={{ fontSize: "lg" }} required crossOrigin={undefined} />
+          <Input type='email' label="Email" name='email' style={{ fontSize: "lg" }} required crossOrigin={undefined} />
+          <Input type="password" name='password' label="Password" style={{ fontSize: "lg" }} required crossOrigin={undefined} />
+          <Input type='date' label="Date de naissance" name='birthday' style={{ fontSize: "lg" }} required crossOrigin={undefined} />
 
           <div className="w-72">
             <Select label="Sélecionner la classe de l'étudiant">

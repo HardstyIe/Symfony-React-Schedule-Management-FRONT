@@ -6,8 +6,11 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { Link } from 'react-router-dom';
+import { useAuth } from '~/Services/authContext'; // Assurez-vous de spécifier le chemin correct
+import jwt_decode from 'jwt-decode'; // Importez jwt_decode
 
 const ListCours = () => {
+
   return (
     <Card className="w-full md:w-96">
       <List>

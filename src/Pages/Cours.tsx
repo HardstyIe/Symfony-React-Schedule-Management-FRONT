@@ -3,9 +3,22 @@ import React from "react";
 import ListCours from '~/Components/ListCours';
 import ModalForm from '~/Components/ModalForm';
 import Sidebar from '~/Components/Sidebar';
+import { useAuth } from '~/Services/authContext';
+import jwt_decode from 'jwt-decode';
 
 
 const Cours = () => {
+
+    const { token } = useAuth();
+
+    if (token) {
+        const decodedToken = jwt_decode(token);
+        console.log('Informations de l\'utilisateur:', decodedToken);
+    }
+    else {
+        console.log("mauvais token");
+
+    }
 
     return (<>
 
