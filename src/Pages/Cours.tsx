@@ -17,7 +17,6 @@ const Cours = () => {
     }
     else {
         console.log("mauvais token");
-
     }
 
     return (<>

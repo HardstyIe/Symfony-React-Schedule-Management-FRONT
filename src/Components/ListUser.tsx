@@ -3,16 +3,19 @@ import {
     List,
     ListItem,
     Card,
-    Button,
 } from "@material-tailwind/react";
 import ModalAbsence from './ModalAbsence';
 import ModalAssignation from './ModalAssignation';
+import { useAuth } from '~/Services/authContext';
+import jwt_decode from 'jwt-decode';
+import { checkIsAdmin } from '~/Services/authUtils';
 
 
 // Ne pas oubliez. role à définir sur les boutons selon si c'est un etudiant formateur ou administrateur
 
 const ListUser = ({ users }) => {
-    console.log(users);
+
+    let isAdmin = checkIsAdmin();
 
     // Filtrer les utilisateurs avec le rôle "ROLE_USER"
     const filteredUsers = users.filter(user => user.roles.includes('ROLE_USER'));
@@ -29,8 +32,6 @@ const ListUser = ({ users }) => {
                     <List>
                         {filteredUsers.map((user, index) => (
                             <ListItem key={index} ripple={false} className="py-1 pr-1 pl-4 pt-2 pb-2 flex justify-between items-center gap-4">
-                                {console.log(user)
-                                }
                                 {user.firstName} {user.lastName} {/* Utilisez la propriété appropriée de l'utilisateur */}
                                 <ModalAbsence />
                             </ListItem>
@@ -44,9 +45,12 @@ const ListUser = ({ users }) => {
                 <Card className="w-full">
                     <List>
                         {filteredUsersTeachers.map((user, index) => (
-                            <ListItem ripple={false} className="py-1 pr-1 pl-4 pt-2 pb-2 flex justify-between items-center gap-4">
+                            <ListItem key={user.id} ripple={false} className="py-1 pr-1 pl-4 pt-2 pb-2 flex justify-between items-center gap-4">
                                 {user.firstName} {user.lastName}
-                                <ModalAssignation />
+
+                                {/* Condition pour avoir le modal que si on est administrateur */}
+                                {isAdmin ? <ModalAssignation /> : null}
+
                             </ListItem>
                         ))}
                     </List>

@@ -12,7 +12,6 @@ const Dashboard = () => {
 
         try {
             let response = await userService.getAllUsers();
-            console.log(response.data['hydra:member']);
 
             setUsers(response.data['hydra:member']);
 
