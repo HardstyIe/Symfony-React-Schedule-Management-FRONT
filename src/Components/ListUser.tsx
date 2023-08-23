@@ -33,7 +33,9 @@ const ListUser = ({ users }) => {
                         {filteredUsers.map((user, index) => (
                             <ListItem key={index} ripple={false} className="py-1 pr-1 pl-4 pt-2 pb-2 flex justify-between items-center gap-4">
                                 {user.firstName} {user.lastName} {/* Utilisez la propriété appropriée de l'utilisateur */}
-                                <ModalAbsence />
+
+                                {/* Vérifie si pas administrateur pour afficher ce modal */}
+                                {!isAdmin ? <ModalAbsence /> : null}
                             </ListItem>
                         ))}
 
