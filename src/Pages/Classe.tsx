@@ -1,10 +1,12 @@
 import { Button } from '@material-tailwind/react';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ListClasse from '~/Components/ListClasse';
 import Sidebar from '~/Components/Sidebar';
+import ClassService from '~/Services/ClassService';
 
 const Classe = () => {
+
     return (<>
 
         {/* div contenu coté gauche */}
